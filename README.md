@@ -55,6 +55,5 @@ Feel free to adjust to your needs. You need to make sure to change the variables
 ## Example
 
 
-![](Grading_report_for_Ziggy_Zygote_asof_2018-12-19.pdf.png)  ![](Grading_report_for_John_Doe_asof_2018-12-19.pdf.png)
-
+![](Grading_report_for_John_Doe_asof_2018-12-19.pdf.png) ![](Grading_report_for_Ziggy_Zygote_asof_2018-12-19.pdf.png) 
 
