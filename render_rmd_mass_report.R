@@ -3,7 +3,7 @@
 
 library(tidyverse)
 
-mydata <- read.csv("grades.csv")
+mydata <- read.csv2("grades.csv")
 
 
 
@@ -12,6 +12,7 @@ render_rmd_mass_report <- function(template = "grading_template.Rmd",
   for (i in 1:nrow(data)) {
     rmarkdown::render(template,
       params = list(
+        firstname = data[i, "Firstname"],
         name = data[i, "Name"],
         crit1 = data[i, "crit1"],
         crit2 = data[i, "crit2"],
@@ -19,6 +20,8 @@ render_rmd_mass_report <- function(template = "grading_template.Rmd",
       ),
       output_file = paste0(
         "Grading_report_for_",
+        data[i, "Firstname"],
+        "_",
         data[i, "Name"],
         "_asof_",
         Sys.Date(),

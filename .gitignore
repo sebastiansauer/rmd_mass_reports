@@ -2,3 +2,13 @@
 .Rhistory
 .RData
 .Ruserdata
+
+
+*.numbers
+
+*_cache/*
+
+
+
+
+

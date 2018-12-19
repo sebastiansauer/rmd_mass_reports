@@ -1,8 +1,8 @@
 --- 
 title: "Grading report TEST"
-subtitle:  "Autor/in: `r params$name`" 
+subtitle:  "Author: `r paste0(params$firstname, ' ', params$name)`" 
 author: "This report was built by AUTHOR" 
-#date: "`r Sys.Date()`"
+date: "`r Sys.Date()`"
 numbersections: FALSE 
 lang: de-De
 geometry: margin=1.1in
@@ -11,6 +11,7 @@ linkcolor: blue
 
 params:
   name: "Test"
+  firstname: "Testfirst"
   crit1: 1.00
   crit2: 1.99
   crit3: 2.023
@@ -45,7 +46,7 @@ options(digits = 2)
 
 # Subject of Assessment
 
-This report provides feedback to `r params$name`. The assessment subject is *Quirkology*.
+This report provides feedback to  `r params$name`, `r params$firstname`. The assessment subject is *Quirkology*.
 
 ```{r echo = FALSE}
 grade_range <- c(
