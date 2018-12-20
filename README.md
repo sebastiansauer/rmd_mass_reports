@@ -5,8 +5,9 @@ Generating mass reports using Rmarkdown in R
 
 ## Purpose
 This repo describes a way how to compile many similar reports using RMarkdown in R. 
-Specifically, it is assumed that there's a tabular data, where each row is a document,
-and each column holds the variables to appear in the reports. 
+Specifically, it is assumed that there's a tabular data set, where each row is a document 
+(eg., a mail or report to one given person), 
+and each column holds the variables to appear in each reports (see examples below).
 In addition, a template is provided where the variables are then parsed into. 
 This template is built on latex, so that the output document is a pdf file.
 
@@ -16,7 +17,7 @@ This template is built on latex, so that the output document is a pdf file.
 1. Install R
 2. Install LaTeX
 3. Download/clone this repo
-4. Set this folder as your working directory in R
+4. Set this folder as your working directory in R (or define it as a RStudio Project)
 5. Run `render_rmd_mass_report()` in `render_rmd_mass_report.R`, it is assumed that all files are in the same folder.
 
 
