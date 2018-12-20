@@ -25,7 +25,7 @@ This template is built on latex, so that the output document is a pdf file.
 
 ## Data file
 
-`grades.csv` is a toy data file for illustration purposes.
+`grades.csv` is a toy data file for illustration purposes. It consists of two rows (two reports) with three variables.
 
 
 ## Templates
@@ -44,11 +44,16 @@ This latex file holds the Latex backbone for the Rmarkdown template. Notice that
 ## Adjusting
 
 
-Feel free to adjust to your needs. You need to make sure to change the variables in all sources:
+Feel free to adjust to your needs. In many cases it may suffice not to touch the latex file. You need to make sure to change the variables in all sources:
 
 - data file
 - Rmd template
 - render function `render_rmd_mass_report()` in `render_rmd_mass_report.R`
+
+
+## Other stuff
+
+`render_example_images.R` is a helper file in order to render the examples images (from pdf to png).
 
 
 
