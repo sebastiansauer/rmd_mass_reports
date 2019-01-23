@@ -53,6 +53,10 @@ options(digits = 2)
 This report provides feedback to  `r params$name`, `r params$firstname`. The assessment subject is *Quirkology*.
 
 ```{r echo = FALSE}
+
+# round grades such as 1.98772 to the nearest allowed grade, such as "2.0"
+
+# define nearest allowed grades:
 grade_range <- c(
   "1,0" = 1.0, "1,3" = 1.3,
   "1,7" = 1.7, "2,0" = 2, "2,3" = 2.3,
@@ -61,10 +65,13 @@ grade_range <- c(
   "5,0" = 5.0
 )
 
+# compute overall grade as mean of criteria:
 grade_total <- mean(c(params$crit1, params$crit2, params$crit3))
 
+# find closest allowed grade:
 grade_pos <- which.min(abs(unlist(grade_total) - grade_range))
 
+# get name of closest allowed grade:
 name_grade_total <- names(grade_range[grade_pos])
 ```
 
