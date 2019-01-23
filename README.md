@@ -28,6 +28,22 @@ This template is built on latex, so that the output document is a pdf file.
 
 `grades.csv` is a toy data file for illustration purposes. It consists of two rows (two reports) with three variables.
 
+You need to supply a data file; the data files stores the grading data for each student.
+
+The data file is of type csv (use UTF-8 encoding), and the following columns are expected:
+
+- Firstname (eg., "John", type string)
+- Name (eg., "Doe", type string)
+- crit1 (first grading criteria, eg., "beauty of style", type string)
+- crit2
+- crit3
+
+If you need to change the number of criteria, you'll need to adapt the main R function (see below).
+
+
+
+
+
 
 ## Templates
 
