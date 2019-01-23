@@ -79,6 +79,8 @@ Feel free to adjust to your needs. In many cases it may suffice not to touch the
 
 `render_example_images.R` is a helper file in order to render the examples images (from pdf to png).
 
+Some settings are tuned to German particularities. See the (yaml) header in the Rmd file for details.
+
 
 
 ## Example

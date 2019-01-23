@@ -14,16 +14,26 @@ library(tidyverse)
 data_file <- "grades.csv"
 
 
-# we assume an English/standard type csv:
-mydata_raw <- read.csv(data_file)
-
-
-# drop empty rows:
-mydata <- mydata_raw %>% drop_na()
 
 
 
-# main function:
+# we assume eg. a Germany-type csv:
+mydata_raw <- read_delim(file = data_file,
+                         delim = ";",
+                         locale = locale(decimal_mark = ",",
+                                         grouping_mark = ".",
+                                         encoding = "UTF8"
+                              ))
+
+
+mydata %>% head()
+
+
+
+# Main function -------------------------------------------------
+
+
+
 render_rmd_mass_report <- function(template = "grading_template.Rmd",
                                    data = mydata) {
   # this function produces a pdf grading report for each student 
@@ -62,6 +72,9 @@ render_rmd_mass_report <- function(template = "grading_template.Rmd",
 }
 
 
+
+
+# Run -----------------------------------------------------------
 
 
 # do it:
