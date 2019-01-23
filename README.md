@@ -12,13 +12,20 @@ In addition, a template is provided where the variables are then parsed into.
 This template is built on latex, so that the output document is a pdf file.
 
 
-## Installation and usage
+## Installation 
 
 1. Install R
 2. Install LaTeX
 3. Download/clone this repo
 4. Set this folder as your working directory in R (or define it as a RStudio Project)
-5. Run `render_rmd_mass_report()` in `render_rmd_mass_report.R`, it is assumed that all files are in the same folder.
+
+
+
+## Usage
+
+1. Prepare a data file `grades.csv` with the grading data, and put it in the project folder.
+2. Run `render_rmd_mass_report()` in `render_rmd_mass_report.R` (it is assumed that all files are in the same folder).
+
 
 
 
@@ -55,7 +62,7 @@ This file is a simple RMarkdown file that holds the overall document.
 
 ### `latex-header.tex`
 
-This latex file holds the Latex backbone for the Rmarkdown template. Notice that `dummy_logo.png` is read (and assumed to be in the same folder).
+This latex file holds the Latex backbone for the Rmarkdown template. Notice that `dummy_logo.png` is read (and assumed to be in the same folder). You'll probably don't want to adjust ist.
 
 
 ## Adjusting
