@@ -15,6 +15,9 @@ params:
   crit1: 1.00
   crit2: 1.99
   crit3: 2.023
+  # add here more grading criteria
+  # make sure they are processed in the R function `render_rmd_mass_report()`, too
+  # make sure all criteria are found in the header line of your data file
 
 output: 
   pdf_document:

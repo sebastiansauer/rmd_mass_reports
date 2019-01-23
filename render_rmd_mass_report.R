@@ -10,18 +10,20 @@ library(tidyverse)
 
 # load data -----------------------------------------------------
 
-
+# name of data file (type csv):
 data_file <- "grades.csv"
 
-mydata_raw <- read.csv2(data_file)
+
+# we assume an English/standard type csv:
+mydata_raw <- read.csv(data_file)
 
 
-# drop empty rows
-
+# drop empty rows:
 mydata <- mydata_raw %>% drop_na()
 
 
 
+# main function:
 render_rmd_mass_report <- function(template = "grading_template.Rmd",
                                    data = mydata) {
   # this function produces a pdf grading report for each student 
@@ -40,6 +42,9 @@ render_rmd_mass_report <- function(template = "grading_template.Rmd",
         crit1 = data[i, "crit1"],
         crit2 = data[i, "crit2"],
         crit3 = data[i, "crit3"]
+        # add here more grading criteria
+        # make sure they are found both in the header row of the data file
+        # as well as in the Rmd template
       ),
       
       # name output file
