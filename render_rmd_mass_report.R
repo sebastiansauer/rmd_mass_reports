@@ -50,9 +50,9 @@ render_rmd_mass_report <- function(template = "grading_template.Rmd",
       # name output file
       output_file = paste0(
         "Grading_report_for_",
-        data[i, "Firstname"],
-        "_",
         data[i, "Name"],
+        "_",
+        data[i, "Firstname"],
         "_asof_",
         Sys.Date(),
         ".pdf"

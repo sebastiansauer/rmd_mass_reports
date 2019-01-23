@@ -9,8 +9,8 @@ geometry: margin=1.1in
 urlcolor: blue
 linkcolor: blue
 
-params:
-  name: "Test"
+params:  
+  name: "Test"  # the values are arbritrary here
   firstname: "Testfirst"
   crit1: 1.00
   crit2: 1.99
@@ -21,8 +21,9 @@ params:
 
 output: 
   pdf_document:
+    latex_engine: xelatex  # for better unicode support
     includes:
-      in_header: latex-header.tex
+      in_header: latex-header.tex  # latex stylesheet
 ---
 
 
