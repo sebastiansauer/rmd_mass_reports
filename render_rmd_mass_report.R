@@ -5,26 +5,31 @@
 
 # setup ---------------------------------------------------------
 library(tidyverse)
-
+library(readxl)
 
 
 # load data -----------------------------------------------------
 
 # name of data file (type csv):
-data_file <- "grades.csv"
+data_file_csv <- "grades.csv"
+data_file_xlsx <- "grades.xlsx"
 
 
 
 
+# we assume eg. a Germany-type (UTF8 encoded) csv file:
+if (file.exists(data_file_csv)) 
+  mydata_raw <- read_delim(file = data_file_csv,
+                           delim = ";",
+                           locale = locale(decimal_mark = ",",
+                                           grouping_mark = ".",
+                                           encoding = "UTF8"
+                           ))
 
-# we assume eg. a Germany-type csv:
-mydata_raw <- read_delim(file = data_file,
-                         delim = ";",
-                         locale = locale(decimal_mark = ",",
-                                         grouping_mark = ".",
-                                         encoding = "UTF8"
-                              ))
 
+if (file.exists(data_file_xlsx))
+  mydata_raw <- read_xlsx(path = data_file_xlsx)
+  
 
 mydata %>% head()
 
@@ -42,11 +47,13 @@ render_rmd_mass_report <- function(template = "grading_template.Rmd",
   
   for (i in 1:nrow(data)) {
     
-    # render pdf report for each student:
-    rmarkdown::render(template,
-                      
-      # define variables for use in pdf report
-      params = list(
+    # render pdf report for each student,
+    rmarkdown::render(
+      # output: pdf file
+      # input: template and parameters
+      
+      template,  # rmd template
+      params = list(  # parameters for use in pdf report
         firstname = data[i, "Firstname"],
         name = data[i, "Name"],
         crit1 = data[i, "crit1"],
@@ -54,7 +61,7 @@ render_rmd_mass_report <- function(template = "grading_template.Rmd",
         crit3 = data[i, "crit3"]
         # add here more grading criteria
         # make sure they are found both in the header row of the data file
-        # as well as in the Rmd template
+        # as well as in the Rmd template file
       ),
       
       # name output file
